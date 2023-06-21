@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visualizer</title>
+    <link rel="stylesheet" href="style.css"> 
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"> -->
+   
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navigation">
+        <!-- <div>
+            <i class="uil uil-bars" id="btn"></i>
+        </div> -->
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span class = "title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+
+                    </span>
+                    <span class = "title">Portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                       <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </span>
+                    <span class = "title">Contact</span>
+                </a>
+            </li>
+        </ul>
+   </div>
+   <div class="toggle" onclick="togglemenu()"></div>
+   <header>
+    <h1>SORTING VISUALIZER</h1>
+</header>
+<div class="main-content">
+    <div class="container">
+        
+        <span class = "sort">
+    <label for="sorting" class="algo">Sorting Algorithm</label>
+    <select id="sorting" name="sorting">
+        <option value="Selection sort">Selection sort</option>
+        <option value="Insertion sort">Insertion sort</option>
+         <option value="Bubble sort">Bubble sort</option>
+         <option id ="mergesort"value="Merge sort">Merge sort</option>
+         <option value="Quick sort" id="quicksort">Quick sort</option>
+         <option value="Heap sort">Heap sort</option>
+    </select>
+</span>
+<span class ="rangeslider">
+    <label for="size">Size of the Array</label>
+    <input type="range" id ="sliderrange" min="1" max="100" value="5" name ="helper" class="slider">
+    <span id="demo"></span> 
+</span>
+   <!-- <span class="speed"> -->
+    <span class="speed">
+        <label for="size">Speed of visualizer</label>
+        <input id="speed" type="range" min=10 max=240 step=1 value=100>
+    </span>
+   <!-- <label for="speed">Speed of Visualization</label>
+    <select id="speed" name="speed">
+        <option value="0.5">0.5</option>
+        <option value="1.5">1.5</option>
+         <option value="1.75">1.75</option>
+         <option value="2.0">2.0</option>
+         <option value="2.0">4.0</option>
+    </select> -->
+    <!-- </span> -->
+    <span id ="generate">
+        <button type="button">Generate Array</button>
+    </span>
+</div>
+<!-- <a id="generate" onclick="RenderScreen()">Generate Array</a> -->
+<div class="visual">
+    <button type="button" id="visualize">Visualize</button>
+</div>
+<div id = bars class="array">
+  
+</div>
+</div>
+<footer>
+    <div class="create">Created By Khushi</div>
+    <div class="footer_socials">
+        <a href="https://www.linkedin.com/in//khushi-verma-378b40242" class="footer_social">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+
+        </a>
+        
+        <a href="https://www.instagram.com/iamkhushiiverma/" class="footer_social">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        
+        <a href="" class="footer_social">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="" class="footer_social">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+     </div>
+  </div>
+  <p class="footer_copy">&#169;Khushi Verma.All right reserved</p>
+</div>
+</footer>
+
+<script>
+var rangeslider = document.getElementById("sliderrange");
+var output = document.getElementById("demo");
+output.innerHTML = rangeslider.value;
+  
+rangeslider.oninput = function() {
+  output.innerHTML = this.value;
+}
+function togglemenu(){
+    let navigation = document.querySelector('.navigation');
+    let toggle = document.querySelector('.toggle');
+    navigation.classList.toggle('active');
+    toggle.classList.toggle('active');
+  }
+</script>
+<script src="helper.js"></script> 
+<script src="mergesort.js"></script>
+<script src="quicksort.js"></script>
+<script src="insertionsort.js"></script>
+<script src="selectionsort.js"></script>
+<script src="bubblesort.js"></script>
+<script src="heapsort.js"></script>
+</body>
+</html>
